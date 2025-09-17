@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataWise - Econometrics & Business Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .rtl { direction: rtl; text-align: right; }
+    input[type="checkbox"], select { accent-color: #6366f1; }
+    .rtl input, .rtl textarea, .rtl select, .rtl button { text-align: right; }
+    .rtl ul { text-align: right; direction: rtl; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?fit=crop&w=60&h=60" alt="DataWise Logo" class="w-12 h-12 rounded-full">
+        <h1 id="site-name" class="text-2xl font-bold text-indigo-600">DataWise</h1>
+      </div>
+      <nav class="flex items-center space-x-6 text-gray-700">
+        <a href="#academic" class="nav-link hover:text-indigo-600" data-en="Academic" data-ar="الأكاديمية">Academic</a>
+        <a href="#business" class="nav-link hover:text-indigo-600" data-en="Business" data-ar="الأعمال">Business</a>
+        <a href="#contact" class="nav-link hover:text-indigo-600" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+        <select id="language-select" class="ml-4 border rounded p-1">
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-cover bg-center py-20" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?fit=crop&w=1400&h=500');">
+    <div class="max-w-4xl mx-auto text-center bg-white bg-opacity-60 p-8 rounded">
+      <h2 id="hero-title" class="text-4xl font-extrabold text-indigo-700" data-en="DataWise - Your Partner in Econometrics, Statistics & Business Analytics" data-ar="DataWise - شريكك في الاقتصاد القياسي والإحصاءات وتحليل الأعمال">DataWise - Your Partner in Econometrics, Statistics & Business Analytics</h2>
+      <p id="hero-desc" class="mt-4 text-gray-700" data-en="Professional services and training for academic research and business intelligence." data-ar="خدمات احترافية وتدريب للبحث الأكاديمي وتحليل الأعمال.">Professional services and training for academic research and business intelligence.</p>
+    </div>
+  </section>
+
+  <!-- ACADEMIC SERVICES -->
+  <section id="academic" class="max-w-6xl mx-auto px-6 py-12">
+    <h3 class="text-3xl font-semibold text-indigo-600" data-en="Academic Services" data-ar="خدمات أكاديمية">Academic Services</h3>
+    <div class="mt-6 grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Econometrics -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h4 class="font-bold text-lg">Econometrics, Statistics & Machine Learning</h4>
+        <ul class="mt-2 list-disc list-inside text-gray-700">
+          <li>Econometrics (starting from 40,000 DA)</li>
+          <li>Questionnaire Analysis (starting from 40,000 DA)</li>
+          <li>Machine Learning Models (starting from 40,000 DA)</li>
+        </ul>
+        <button class="apply-btn mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+          data-subservices="Econometrics, Questionnaire Analysis, Machine Learning Models">
+          Submit Application
+        </button>
+      </div>
+
+      <!-- Training -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h4 class="font-bold text-lg">Training</h4>
+        <ul class="mt-2 list-disc list-inside text-gray-700">
+          <li>PowerBI</li>
+          <li>Python</li>
+          <li>Stata</li>
+          <li>EViews</li>
+          <li>SPSS</li>
+        </ul>
+        <button class="apply-btn mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+          data-subservices="PowerBI, Python, Stata, EViews, SPSS">
+          Submit Application
+        </button>
+      </div>
+
+      <!-- Co-supervising -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h4 class="font-bold text-lg">Co-supervising</h4>
+        <p class="mt-2 text-gray-600">Support for PhD students throughout research.</p>
+        <button class="apply-btn mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+          data-subservices="Co-supervising for PhD students">
+          Submit Application
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS SERVICES -->
+  <section id="business" class="bg-indigo-50 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-semibold text-indigo-600">Business Services</h3>
+      <div class="mt-6 grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Business Training -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h4 class="font-bold text-lg">Training</h4>
+          <ul class="mt-2 list-disc list-inside text-gray-700">
+            <li>Excel for Finance</li>
+            <li>PowerBI</li>
+            <li>Alteryx</li>
+            <li>Python</li>
+          </ul>
+          <button class="apply-btn mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            data-subservices="Excel for Finance, PowerBI, Alteryx, Python">
+            Submit Application
+          </button>
+        </div>
+
+        <!-- Business Intelligence -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h4 class="font-bold text-lg">Business Intelligence & Consulting</h4>
+          <p class="mt-2 text-gray-600">Analysis and consulting in finance and operations.</p>
+          <button class="apply-btn mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            data-subservices="Business Intelligence Analysis, Finance Consulting">
+            Submit Application
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FORM -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
+      <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 id="modal-title" class="text-xl font-bold mb-4">Apply for Service</h3>
+      <form id="application-form" class="space-y-4" action="https://formspree.io/f/xldwywgg" method="POST">
+        <input type="hidden" name="form_type" value="Service Application">
+
+        <input type="text" name="full_name" placeholder="Full Name" class="w-full border p-2 rounded" required>
+        <input type="email" name="email" placeholder="Email Address" class="w-full border p-2 rounded" required>
+        <input type="tel" name="phone" placeholder="Phone Number" class="w-full border p-2 rounded" required>
+        <input type="text" name="job_role" placeholder="Job / Role (e.g., PhD Student)" class="w-full border p-2 rounded" required>
+        <input type="text" name="university" placeholder="University / Institution" class="w-full border p-2 rounded" required>
+
+        <select name="purpose" class="w-full border p-2 rounded" required>
+          <option value="">Purpose</option>
+          <option value="Thesis">Thesis</option>
+          <option value="Article">Article</option>
+          <option value="Research">Research</option>
+          <option value="Business Project">Business Project</option>
+        </select>
+
+        <select name="service_type" class="w-full border p-2 rounded" required>
+          <option value="">Select Type of Service</option>
+        </select>
+
+        <textarea name="message" placeholder="Additional message / requirements" class="w-full border p-2 rounded" rows="4"></textarea>
+
+        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 w-full">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h3 class="text-3xl font-semibold text-indigo-600">Contact Us</h3>
+    <p class="mt-2 text-gray-700">Reach out for quotes, training, or consultancy.</p>
+    <form id="contact-form" class="mt-4 space-y-4" action="https://formspree.io/f/xldwywgg" method="POST">
+      <input type="hidden" name="form_type" value="Contact Form">
+      <input type="text" name="name" placeholder="Your Name" class="w-full border p-2 rounded" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full border p-2 rounded" required>
+      <textarea name="message" placeholder="Message" class="w-full border p-2 rounded" rows="4"></textarea>
+      <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 w-full">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white py-6 text-center text-gray-500">
+    <div class="flex flex-col items-center space-y-3">
+      <p>© <span id="year"></span> DataWise. All rights reserved.</p>
+      <a href="https://www.facebook.com/dfmacademy" target="_blank" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800">
+        <!-- Facebook Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M22.675 0h-21.35C.596 0 0 .596 0 1.326v21.348C0 23.404.596 24 1.326 
+          24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.894-4.788 
+          4.659-4.788 1.325 0 2.466.099 
+          2.797.143v3.24l-1.919.001c-1.505 0-1.797.716-1.797 
+          1.765v2.314h3.587l-.467 3.622h-3.12V24h6.116C23.404 
+          24 24 23.404 24 22.674V1.326C24 
+          .596 23.404 0 22.675 0z"/>
+        </svg>
+        <span>Follow us on Facebook</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language switcher
+    document.getElementById('language-select').addEventListener('change', function() {
+      const lang = this.value;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      if(lang === 'ar') {
+        document.body.classList.add('rtl');
+        document.body.setAttribute('dir', 'rtl');
+      } else {
+        document.body.classList.remove('rtl');
+        document.body.setAttribute('dir', 'ltr');
+      }
+    });
+
+    // Modal form logic
+    const modal = document.getElementById('modal');
+    const serviceSelect = document.querySelector('#application-form select[name="service_type"]');
+    document.querySelectorAll('.apply-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        const subservices = btn.getAttribute('data-subservices').split(',');
+        serviceSelect.innerHTML = '<option value="">Select Type of Service</option>';
+        subservices.forEach(s => {
+          const option = document.createElement('option');
+          option.value = s.trim();
+          option.textContent = s.trim();
+          serviceSelect.appendChild(option);
+        });
+      });
+    });
+    document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'));
+  </script>
+
+</body>
+</html>
