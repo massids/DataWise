@@ -18,13 +18,13 @@
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
       <div class="flex items-center gap-4">
-        <!-- Updated: Use your uploaded logo -->
         <img src="datawise.png" alt="DataWise Logo" class="w-12 h-12 rounded-full">
         <h1 id="site-name" class="text-2xl font-bold text-indigo-600">DataWise</h1>
       </div>
       <nav class="flex items-center space-x-6 text-gray-700">
         <a href="#academic" class="nav-link hover:text-indigo-600" data-en="Academic" data-ar="الأكاديمية">Academic</a>
         <a href="#business" class="nav-link hover:text-indigo-600" data-en="Business" data-ar="الأعمال">Business</a>
+        <a href="#pricing" class="nav-link hover:text-indigo-600" data-en="Pricing" data-ar="الأسعار">Pricing</a>
         <a href="#contact" class="nav-link hover:text-indigo-600" data-en="Contact" data-ar="اتصل بنا">Contact</a>
         <select id="language-select" class="ml-4 border rounded p-1">
           <option value="en">English</option>
@@ -35,7 +35,6 @@
   </header>
 
   <!-- HERO -->
-  <!-- Updated: Use your DataWise Camp picture -->
   <section class="bg-cover bg-center py-20" style="background-image: url('dwc.png');">
     <div class="max-w-4xl mx-auto text-center bg-white bg-opacity-60 p-8 rounded">
       <h2 id="hero-title" class="text-4xl font-extrabold text-indigo-700" 
@@ -130,6 +129,20 @@
     </div>
   </section>
 
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="max-w-6xl mx-auto px-6 py-12 text-center">
+    <h3 class="text-3xl font-semibold text-indigo-600" data-en="Pricing" data-ar="الأسعار">Pricing</h3>
+    <p class="mt-2 text-gray-700" data-en="Check our detailed pricing for Academic and Business services." data-ar="اطلع على تفاصيل الأسعار للخدمات الأكاديمية وخدمات الأعمال."></p>
+    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-6">
+      <a href="academic_services.pdf" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+        Academic Services PDF
+      </a>
+      <a href="business_services.pdf" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+        Business Services PDF
+      </a>
+    </div>
+  </section>
+
   <!-- MODAL FORM -->
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
@@ -144,7 +157,6 @@
         <input type="text" name="job_role" placeholder="Job / Role (e.g., PhD Student)" class="w-full border p-2 rounded" required>
         <input type="text" name="university" placeholder="University / Institution" class="w-full border p-2 rounded" required>
 
-        <!-- Optional selects -->
         <select name="purpose" class="w-full border p-2 rounded hidden" required>
           <option value="">Purpose</option>
         </select>
@@ -233,7 +245,6 @@ document.querySelectorAll('.apply-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     modal.classList.remove('hidden');
 
-    // Populate service_type select
     const subservices = btn.getAttribute('data-subservices').split(',');
     serviceSelect.innerHTML = '<option value="">Select Type of Service</option>';
     subservices.forEach(s => {
@@ -243,7 +254,6 @@ document.querySelectorAll('.apply-btn').forEach(btn => {
       serviceSelect.appendChild(option);
     });
 
-    // Reset and hide all optional selects
     purposeSelect.classList.add('hidden'); purposeSelect.removeAttribute('required');
     trainingTypeSelect.classList.add('hidden'); trainingTypeSelect.removeAttribute('required');
     deliveryModeSelect.classList.add('hidden'); deliveryModeSelect.removeAttribute('required');
