@@ -10,17 +10,21 @@
     input[type="checkbox"], select { accent-color: #6366f1; }
     .rtl input, .rtl textarea, .rtl select, .rtl button { text-align: right; }
     .rtl ul { text-align: right; direction: rtl; }
+
+    /* Smooth scroll for all anchors */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
+<body id="top" class="bg-gray-50 text-gray-900 antialiased">
 
   <!-- HEADER -->
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-      <div class="flex items-center gap-4">
+      <!-- Logo + Site Name now clickable -->
+      <a href="#top" class="flex items-center gap-4">
         <img src="datawise.png" alt="DataWise Logo" class="w-12 h-12 rounded-full">
         <h1 id="site-name" class="text-2xl font-bold text-indigo-600">DataWise</h1>
-      </div>
+      </a>
       <nav class="flex items-center space-x-6 text-gray-700">
         <a href="#academic" class="nav-link hover:text-indigo-600" data-en="Academic" data-ar="الأكاديمية">Academic</a>
         <a href="#business" class="nav-link hover:text-indigo-600" data-en="Business" data-ar="الأعمال">Business</a>
@@ -143,47 +147,6 @@
     </div>
   </section>
 
-  <!-- MODAL FORM -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
-      <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-      <h3 id="modal-title" class="text-xl font-bold mb-4">Apply for Service</h3>
-      <form id="application-form" class="space-y-4" action="https://formspree.io/f/xldwywgg" method="POST">
-        <input type="hidden" name="form_type" value="Service Application">
-
-        <input type="text" name="full_name" placeholder="Full Name" class="w-full border p-2 rounded" required>
-        <input type="email" name="email" placeholder="Email Address" class="w-full border p-2 rounded" required>
-        <input type="tel" name="phone" placeholder="Phone Number" class="w-full border p-2 rounded" required>
-        <input type="text" name="job_role" placeholder="Job / Role (e.g., PhD Student)" class="w-full border p-2 rounded" required>
-        <input type="text" name="university" placeholder="University / Institution" class="w-full border p-2 rounded" required>
-
-        <select name="purpose" class="w-full border p-2 rounded hidden" required>
-          <option value="">Purpose</option>
-        </select>
-
-        <select name="training_type" class="w-full border p-2 rounded hidden" required>
-          <option value="">Training Type</option>
-          <option value="Individual">Individual</option>
-          <option value="Groups">Groups</option>
-        </select>
-
-        <select name="delivery_mode" class="w-full border p-2 rounded hidden" required>
-          <option value="">Delivery Mode</option>
-          <option value="Online">Online</option>
-          <option value="In-person">In-person</option>
-        </select>
-
-        <select name="service_type" class="w-full border p-2 rounded" required>
-          <option value="">Select Type of Service</option>
-        </select>
-
-        <textarea name="message" placeholder="Additional message / requirements" class="w-full border p-2 rounded" rows="4"></textarea>
-
-        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 w-full">Submit Application</button>
-      </form>
-    </div>
-  </div>
-
   <!-- CONTACT -->
   <section id="contact" class="max-w-4xl mx-auto px-6 py-12 text-center">
     <h3 class="text-3xl font-semibold text-indigo-600">Contact Us</h3>
@@ -233,47 +196,6 @@ document.getElementById('language-select').addEventListener('change', function()
     document.body.setAttribute('dir', 'ltr');
   }
 });
-
-// Modal form logic
-const modal = document.getElementById('modal');
-const serviceSelect = document.querySelector('#application-form select[name="service_type"]');
-const purposeSelect = document.querySelector('#application-form select[name="purpose"]');
-const trainingTypeSelect = document.querySelector('#application-form select[name="training_type"]');
-const deliveryModeSelect = document.querySelector('#application-form select[name="delivery_mode"]');
-
-document.querySelectorAll('.apply-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-
-    const subservices = btn.getAttribute('data-subservices').split(',');
-    serviceSelect.innerHTML = '<option value="">Select Type of Service</option>';
-    subservices.forEach(s => {
-      const option = document.createElement('option');
-      option.value = s.trim();
-      option.textContent = s.trim();
-      serviceSelect.appendChild(option);
-    });
-
-    purposeSelect.classList.add('hidden'); purposeSelect.removeAttribute('required');
-    trainingTypeSelect.classList.add('hidden'); trainingTypeSelect.removeAttribute('required');
-    deliveryModeSelect.classList.add('hidden'); deliveryModeSelect.removeAttribute('required');
-
-    const h4Text = btn.closest('div').querySelector('h4').textContent;
-
-    if(h4Text.includes('Econometrics')) {
-      purposeSelect.classList.remove('hidden');
-      purposeSelect.setAttribute('required', 'required');
-      purposeSelect.innerHTML = '<option value="">Purpose</option><option value="Thesis">Thesis</option><option value="Article">Article</option>';
-    } else if(h4Text.includes('Training') && !btn.closest('section').id.includes('business')) {
-      trainingTypeSelect.classList.remove('hidden');
-      deliveryModeSelect.classList.remove('hidden');
-      trainingTypeSelect.setAttribute('required', 'required');
-      deliveryModeSelect.setAttribute('required', 'required');
-    }
-  });
-});
-
-document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'));
 </script>
 
 </body>
